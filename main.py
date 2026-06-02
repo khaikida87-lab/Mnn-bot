@@ -921,5 +921,5 @@ async def on_ready():
     bot.add_view(VerifyButton())
     print("✅ Persistent views registered!")
 
-
+keep_alive()
 bot.run(TOKEN)
