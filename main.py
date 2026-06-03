@@ -32,7 +32,7 @@ intents.message_content = True
 intents.members = True
 
 bot = commands.Bot(command_prefix="!", intents=intents)
-   tree = bot.tree
+tree = bot.tree
 @bot.event
 async def setup_hook():
     await bot.load_extension("cogs.request")
