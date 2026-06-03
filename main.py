@@ -32,7 +32,18 @@ intents.message_content = True
 intents.members = True
 
 bot = commands.Bot(command_prefix="!", intents=intents)
-tree = bot.tree
+@bot.event
+async def setup_hook():
+    await bot.load_extension("cogs.request")
+
+@bot.event
+async def on_ready():
+    print(f'Bot is ready. Logged in as {bot.user}')
+    try:
+        synced = await bot.tree.sync()
+        print(f"Synced {len(synced)} command(s)")
+    except Exception as e:
+        print(e)
 
 
 # ─── Helpers ────────────────────────────────────────────────────────────────
