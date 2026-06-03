@@ -922,12 +922,16 @@ async def clearwarn(interaction: discord.Interaction, user: discord.Member, nomb
     await interaction.response.send_message(embed=embed)
 
 
+@bot.event
+async def setup_hook():
+    await bot.load_extension("cogs.request")
+    await bot.tree.sync()
+    print("✅ Cogs + Slash commands synced!")
 # ─── Bot Events ─────────────────────────────────────────────────────────────
 
 @bot.event
 async def on_ready():
     print(f"✅ Bot berjalan sebagai {bot.user}")
-    await tree.sync()
     print("✅ Slash commands synced!")
     bot.add_view(VerifyButton())
     print("✅ Persistent views registered!")
