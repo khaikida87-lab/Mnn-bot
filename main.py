@@ -933,4 +933,4 @@ async def on_ready():
     print("✅ Persistent views registered!")
 
 keep_alive()
-bot.run(TOKEN)
+bot.run(os.getenv("DISCORD_TOKEN"))
