@@ -25,7 +25,7 @@ import os
 
 db = {}  # WAJIB ADA LINE NIe
 TOKEN = os.environ.get("DISCORD_TOKEN")
-OWNER_ID = 0  # Will be fetched dynamically via @khaikida87 username search
+OWNER_ID = 1472965838075072626 # Will be fetched dynamically via @khaikida87 username search
 
 intents = discord.Intents.default()
 intents.message_content = True
